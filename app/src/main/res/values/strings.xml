@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tarjeta de Presentacion</string>
+    <string name="Nombre">Amadeo</string>
+    <string name="Ocupacion">Programador</string>
+    <string name="Telefono">+34 123 456 789</string>
+    <string name="Correo">amadeo.ejemplo@gmail.com</string>
+    <string name="Residencia">Madrid, España</string>
+    <string name="Web">Amadeo.com</string>
+</resources>
