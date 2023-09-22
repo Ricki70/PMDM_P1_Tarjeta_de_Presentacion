@@ -113,13 +113,7 @@ fun TarjetaDePresentacion() {
                     .padding(top = 50.dp),
                 horizontalArrangement = Arrangement.Center
             ) {
-                Text(
-                    text = stringResource(R.string.Telefono),
-                    fontSize = 16.sp,
-                    style = TextStyle(
-                        color = Color(0, 0, 0)
-                    )
-                )
+                GreetingText(R.string.Telefono)
             }
 
             Row(
@@ -127,13 +121,7 @@ fun TarjetaDePresentacion() {
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                Text(
-                    text = stringResource(R.string.Correo),
-                    fontSize = 16.sp,
-                    style = TextStyle(
-                        color = Color(0, 0, 0)
-                    )
-                )
+                GreetingText(R.string.Correo)
             }
 
             Row(
@@ -141,13 +129,7 @@ fun TarjetaDePresentacion() {
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                Text(
-                    text = stringResource(R.string.Residencia),
-                    fontSize = 16.sp,
-                    style = TextStyle(
-                        color = Color(0, 0, 0)
-                    )
-                )
+                GreetingText(R.string.Residencia)
             }
             Row(
                 modifier = Modifier
@@ -189,6 +171,18 @@ fun Line() {
             .background(Color(0, 103, 91))
     )
 }
+
+@Composable
+fun GreetingText(textResource: Int) {
+    Text(
+        text = stringResource(textResource),
+        fontSize = 16.sp,
+        style = TextStyle(
+            color = Color(0, 0, 0)
+        )
+    )
+}
+
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
