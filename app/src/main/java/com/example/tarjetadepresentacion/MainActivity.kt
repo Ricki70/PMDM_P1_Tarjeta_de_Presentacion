@@ -65,11 +65,11 @@ fun TarjetaDePresentacion() {
 
                 horizontalArrangement = Arrangement.Center
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.ic_launcher_foreground),
-                    contentDescription = null,
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
+                GreetingImage(
+                    R.drawable.ic_launcher_foreground,
+                    R.string.descripcion_logo,
+                    ContentScale.Crop,
+                    Modifier
                         .size(225.dp)
                         .fillMaxWidth()
                         .background(Color(82, 199, 184), CircleShape)
@@ -81,12 +81,10 @@ fun TarjetaDePresentacion() {
                     .padding(top = 30.dp),
                 horizontalArrangement = Arrangement.Center
             ) {
-                Text(
-                    text = stringResource(R.string.Nombre),
-                    fontSize = 50.sp,
-                    style = TextStyle(
-                        color = Color(0, 103, 91)
-                    )
+                GreetingText(
+                    R.string.Nombre,
+                    50,
+                    Color(0, 103, 91)
                 )
             }
 
@@ -96,12 +94,10 @@ fun TarjetaDePresentacion() {
                     .padding(bottom = 50.dp),
                 horizontalArrangement = Arrangement.Center
             ){
-                Text(
-                    text = stringResource(R.string.Ocupacion),
-                    fontSize = 16.sp,
-                    style = TextStyle(
-                        color = Color(0,0,0)
-                    )
+                GreetingText(
+                    R.string.Ocupacion,
+                    16,
+                    Color(0, 0, 0)
                 )
             }
 
@@ -113,7 +109,11 @@ fun TarjetaDePresentacion() {
                     .padding(top = 50.dp),
                 horizontalArrangement = Arrangement.Center
             ) {
-                GreetingText(R.string.Telefono)
+                GreetingText(
+                    R.string.Telefono,
+                    16,
+                    Color(0, 0, 0)
+                )
             }
 
             Row(
@@ -121,7 +121,7 @@ fun TarjetaDePresentacion() {
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                GreetingText(R.string.Correo)
+                GreetingText(R.string.Correo, 16, Color(0, 0, 0))
             }
 
             Row(
@@ -129,7 +129,11 @@ fun TarjetaDePresentacion() {
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                GreetingText(R.string.Residencia)
+                GreetingText(
+                    R.string.Residencia,
+                    16,
+                    Color(0, 0, 0)
+                )
             }
             Row(
                 modifier = Modifier
@@ -137,11 +141,11 @@ fun TarjetaDePresentacion() {
 
                 horizontalArrangement = Arrangement.Center
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.firma),
-                    contentDescription = "Firma",
-                    modifier = Modifier
-                        .size(200.dp)
+                GreetingImage(
+                    R.drawable.firma,
+                    R.string.descripcion_firma,
+                    ContentScale.Fit,
+                    Modifier.size(200.dp)
                 )
             }
             Row (
@@ -150,20 +154,20 @@ fun TarjetaDePresentacion() {
 
                 horizontalArrangement = Arrangement.Center
             ){
-                Text(
-                    text = stringResource(R.string.Web),
-                    fontSize = 20.sp,
-                    style = TextStyle(
-                        color = Color(0, 103, 91)
-                    )
+                GreetingText(
+                    R.string.Web,
+                    20,
+                    Color(0, 103, 91)
                 )
             }
         }
     }
 
+/*
+FUNCIÓN PARA DIBUJAR UNA LINEA HORIZONTAL
+ */
 @Composable
 fun Line() {
-    // Línea horizontal negra
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -172,14 +176,39 @@ fun Line() {
     )
 }
 
+/*
+FUNCIÓN PARA ESCRIBIR LOS COMPONENTES DE TIPO TEXTO
+PARAMETERS.
+ textResource: Int -> representa el recurso String empleado
+ fontSize: Int -> representa el tamaño de la fuente del texto
+ colorStyle: Color -> representa el color de la fuente del texto
+ */
 @Composable
-fun GreetingText(textResource: Int) {
+fun GreetingText(textResource: Int, fontSize: Int, colorStyle: Color) {
     Text(
         text = stringResource(textResource),
-        fontSize = 16.sp,
+        fontSize = fontSize.sp,
         style = TextStyle(
-            color = Color(0, 0, 0)
+            color = colorStyle
         )
+    )
+}
+
+/*
+FUNCIÓN PARA ESCRIBIR LOS COMPONENTES DE TIPO IMAGEN
+PARAMETERS.
+ imageResource: Int -> representa el recurso Image empleado
+ descriptionResource: Int -> representa el recurso String empleado para la descripción
+ contentScale: ContentScale -> representa la escala empleada para la imagen
+ modifier: Modifier -> representa el modifier empleado para la imagen
+ */
+@Composable
+fun GreetingImage(imageResource: Int, descriptionResource: Int, contentScale: ContentScale, modifier: Modifier) {
+    Image(
+        painter = painterResource(imageResource),
+        contentDescription = stringResource(descriptionResource),
+        contentScale = contentScale,
+        modifier = modifier
     )
 }
 

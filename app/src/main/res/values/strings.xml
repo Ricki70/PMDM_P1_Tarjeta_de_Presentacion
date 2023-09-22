@@ -6,4 +6,6 @@
     <string name="Correo">amadeo.ejemplo@gmail.com</string>
     <string name="Residencia">Madrid, España</string>
     <string name="Web">Amadeo.com</string>
+    <string name="descripcion_logo">Logo de Android</string>
+    <string name="descripcion_firma">Firma</string>
 </resources>
