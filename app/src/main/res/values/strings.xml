@@ -8,4 +8,7 @@
     <string name="Web">Amadeo.com</string>
     <string name="descripcion_logo">Logo de Android</string>
     <string name="descripcion_firma">Firma</string>
+    <string name="descripcion_icon_telefono">Icono teléfono</string>
+    <string name="descripcion_icon_correo">Icono correo</string>
+    <string name="descripcion_icono_ubicacion">Icono ubicación</string>
 </resources>

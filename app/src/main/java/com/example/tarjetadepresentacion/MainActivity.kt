@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -84,7 +85,8 @@ fun TarjetaDePresentacion() {
                 GreetingText(
                     R.string.Nombre,
                     50,
-                    Color(0, 103, 91)
+                    Color(0, 103, 91),
+                    Modifier
                 )
             }
 
@@ -97,7 +99,8 @@ fun TarjetaDePresentacion() {
                 GreetingText(
                     R.string.Ocupacion,
                     16,
-                    Color(0, 0, 0)
+                    Color(0, 0, 0),
+                    Modifier
                 )
             }
 
@@ -107,32 +110,61 @@ fun TarjetaDePresentacion() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 50.dp),
-                horizontalArrangement = Arrangement.Center
+                horizontalArrangement = Arrangement.SpaceEvenly
             ) {
+                GreetingImage(
+                    R.drawable.telefono,
+                    R.string.descripcion_icon_telefono,
+                    ContentScale.Fit,
+                    Modifier.size(21.dp)
+                )
                 GreetingText(
                     R.string.Telefono,
                     16,
-                    Color(0, 0, 0)
+                    Color(0, 0, 0),
+                    Modifier.width(210.dp)
                 )
             }
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
+                    .fillMaxWidth()
+                    .padding(top = 5.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                GreetingText(R.string.Correo, 16, Color(0, 0, 0))
+                GreetingImage(
+                    R.drawable.correo,
+                    R.string.descripcion_icon_correo,
+                    ContentScale.Fit,
+                    Modifier
+                        .size(21.dp)
+                        .padding(1.dp)
+                )
+                GreetingText(
+                    R.string.Correo,
+                    16,
+                    Color(0, 0, 0),
+                    Modifier.width(210.dp)
+                )
             }
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
+                    .fillMaxWidth()
+                    .padding(top = 5.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly
             ) {
+                GreetingImage(
+                    R.drawable.ubicacion,
+                    R.string.descripcion_icono_ubicacion,
+                    ContentScale.Fit,
+                    Modifier.size(21.dp)
+                )
                 GreetingText(
                     R.string.Residencia,
                     16,
-                    Color(0, 0, 0)
+                    Color(0, 0, 0),
+                    Modifier.width(210.dp)
                 )
             }
             Row(
@@ -157,7 +189,8 @@ fun TarjetaDePresentacion() {
                 GreetingText(
                     R.string.Web,
                     20,
-                    Color(0, 103, 91)
+                    Color(0, 103, 91),
+                    Modifier
                 )
             }
         }
@@ -182,15 +215,17 @@ PARAMETERS.
  textResource: Int -> representa el recurso String empleado
  fontSize: Int -> representa el tamaño de la fuente del texto
  colorStyle: Color -> representa el color de la fuente del texto
+ modifier: Modifier -> representa el modifier empleado para el texto
  */
 @Composable
-fun GreetingText(textResource: Int, fontSize: Int, colorStyle: Color) {
+fun GreetingText(textResource: Int, fontSize: Int, colorStyle: Color, modifier: Modifier) {
     Text(
         text = stringResource(textResource),
         fontSize = fontSize.sp,
         style = TextStyle(
             color = colorStyle
-        )
+        ),
+        modifier = modifier
     )
 }
 
