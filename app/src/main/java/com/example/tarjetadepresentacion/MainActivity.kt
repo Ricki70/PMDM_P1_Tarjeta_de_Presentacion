@@ -67,7 +67,7 @@ fun TarjetaDePresentacion() {
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.ic_launcher_foreground),
-                    contentDescription = "Logo de Android",
+                    contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .size(225.dp)
