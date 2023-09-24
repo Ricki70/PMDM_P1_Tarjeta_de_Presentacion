@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -55,25 +56,23 @@ fun TarjetaDePresentacion() {
         Column(
             modifier = Modifier
                 .padding(all = 16.dp)
-                .padding(top = 50.dp)
+                .padding(top = 20.dp)
                 .fillMaxSize(),
-
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth(),
-
                 horizontalArrangement = Arrangement.Center
             ) {
                 GreetingImage(
-                    R.drawable.ic_launcher_foreground,
-                    R.string.descripcion_logo,
-                    ContentScale.Crop,
-                    Modifier
+                    imageResource = R.drawable.ic_launcher_foreground,
+                    descriptionResource = R.string.descripcion_logo,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
                         .size(225.dp)
                         .fillMaxWidth()
-                        .background(Color(82, 199, 184), CircleShape)
+                        .background(colorResource(R.color.my_blue_light), CircleShape)
                 )
             }
             Row(
@@ -83,10 +82,9 @@ fun TarjetaDePresentacion() {
                 horizontalArrangement = Arrangement.Center
             ) {
                 GreetingText(
-                    R.string.Nombre,
-                    50,
-                    Color(0, 103, 91),
-                    Modifier
+                    textResource = R.string.Nombre,
+                    fontSize = 50,
+                    colorStyle = colorResource(R.color.my_blue_dark)
                 )
             }
 
@@ -97,10 +95,7 @@ fun TarjetaDePresentacion() {
                 horizontalArrangement = Arrangement.Center
             ){
                 GreetingText(
-                    R.string.Ocupacion,
-                    16,
-                    Color(0, 0, 0),
-                    Modifier
+                    textResource = R.string.Ocupacion
                 )
             }
 
@@ -113,16 +108,14 @@ fun TarjetaDePresentacion() {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 GreetingImage(
-                    R.drawable.telefono,
-                    R.string.descripcion_icon_telefono,
-                    ContentScale.Fit,
-                    Modifier.size(21.dp)
+                    imageResource = R.drawable.telefono,
+                    descriptionResource = R.string.descripcion_icon_telefono,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier.size(21.dp)
                 )
                 GreetingText(
-                    R.string.Telefono,
-                    16,
-                    Color(0, 0, 0),
-                    Modifier.width(210.dp)
+                    textResource = R.string.Telefono,
+                    modifier = Modifier.width(210.dp)
                 )
             }
 
@@ -133,18 +126,16 @@ fun TarjetaDePresentacion() {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 GreetingImage(
-                    R.drawable.correo,
-                    R.string.descripcion_icon_correo,
-                    ContentScale.Fit,
-                    Modifier
+                    imageResource = R.drawable.correo,
+                    descriptionResource = R.string.descripcion_icon_correo,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
                         .size(21.dp)
                         .padding(1.dp)
                 )
                 GreetingText(
-                    R.string.Correo,
-                    16,
-                    Color(0, 0, 0),
-                    Modifier.width(210.dp)
+                    textResource = R.string.Correo,
+                    modifier = Modifier.width(210.dp)
                 )
             }
 
@@ -155,42 +146,37 @@ fun TarjetaDePresentacion() {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 GreetingImage(
-                    R.drawable.ubicacion,
-                    R.string.descripcion_icono_ubicacion,
-                    ContentScale.Fit,
-                    Modifier.size(21.dp)
+                    imageResource = R.drawable.ubicacion,
+                    descriptionResource = R.string.descripcion_icono_ubicacion,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier.size(21.dp)
                 )
                 GreetingText(
-                    R.string.Residencia,
-                    16,
-                    Color(0, 0, 0),
-                    Modifier.width(210.dp)
+                    textResource = R.string.Residencia,
+                    modifier = Modifier.width(210.dp)
                 )
             }
             Row(
                 modifier = Modifier
                     .fillMaxWidth(),
-
                 horizontalArrangement = Arrangement.Center
             ) {
                 GreetingImage(
-                    R.drawable.firma,
-                    R.string.descripcion_firma,
-                    ContentScale.Fit,
-                    Modifier.size(200.dp)
+                    imageResource = R.drawable.firma,
+                    descriptionResource = R.string.descripcion_firma,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier.size(200.dp)
                 )
             }
             Row (
                 modifier = Modifier
                     .fillMaxWidth(),
-
                 horizontalArrangement = Arrangement.Center
             ){
                 GreetingText(
-                    R.string.Web,
-                    20,
-                    Color(0, 103, 91),
-                    Modifier
+                    textResource = R.string.Web,
+                    fontSize = 20,
+                    colorStyle = colorResource(R.color.my_blue_dark)
                 )
             }
         }
@@ -205,7 +191,7 @@ fun Line() {
         modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
-            .background(Color(0, 103, 91))
+            .background(colorResource(R.color.my_blue_light))
     )
 }
 
@@ -218,7 +204,12 @@ PARAMETERS.
  modifier: Modifier -> representa el modifier empleado para el texto
  */
 @Composable
-fun GreetingText(textResource: Int, fontSize: Int, colorStyle: Color, modifier: Modifier) {
+fun GreetingText(
+    textResource: Int,
+    modifier: Modifier = Modifier,
+    fontSize: Int = 16,
+    colorStyle: Color = colorResource(R.color.black)
+) {
     Text(
         text = stringResource(textResource),
         fontSize = fontSize.sp,
@@ -238,7 +229,12 @@ PARAMETERS.
  modifier: Modifier -> representa el modifier empleado para la imagen
  */
 @Composable
-fun GreetingImage(imageResource: Int, descriptionResource: Int, contentScale: ContentScale, modifier: Modifier) {
+fun GreetingImage(
+    imageResource: Int,
+    descriptionResource: Int,
+    contentScale: ContentScale,
+    modifier: Modifier
+) {
     Image(
         painter = painterResource(imageResource),
         contentDescription = stringResource(descriptionResource),
