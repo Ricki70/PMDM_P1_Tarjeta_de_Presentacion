@@ -173,11 +173,11 @@ fun TarjetaDePresentacion() {
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ){
-                GreetingText(
+                /*GreetingText(
                     textResource = R.string.Web,
                     fontSize = 20,
                     colorStyle = colorResource(R.color.my_blue_dark)
-                )
+                )*/
             }
         }
     }
