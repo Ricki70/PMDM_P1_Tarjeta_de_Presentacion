@@ -1,3 +1,10 @@
+/*
+INTEGRANTES DEL GRUPO
+-Sergio Ania Lázaro
+-Ricardo De Antonio Aguirre
+-Irene López Melero
+ */
+
 package com.example.tarjetadepresentacion
 
 import android.os.Bundle
