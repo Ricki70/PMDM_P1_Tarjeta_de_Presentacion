@@ -1,4 +1,4 @@
-/*
+/***
 INTEGRANTES DEL GRUPO
 -Sergio Ania Lázaro
 -Ricardo De Antonio Aguirre
@@ -50,6 +50,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    // Creamos la tarjeta de presentación
                     TarjetaDePresentacion()
                 }
             }
@@ -57,6 +58,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/***
+ * FUNCIÓN PARA CREAR LA TARJETA DE PRESENTACIÓN
+ */
 @Composable
 fun TarjetaDePresentacion() {
         // Información de la tarjeta
@@ -178,7 +182,7 @@ fun TarjetaDePresentacion() {
         }
     }
 
-/*
+/***
 FUNCIÓN PARA DIBUJAR UNA LINEA HORIZONTAL
  */
 @Composable
@@ -191,9 +195,8 @@ fun Line() {
     )
 }
 
-/*
+/***
 FUNCIÓN PARA ESCRIBIR LOS COMPONENTES DE TIPO TEXTO
-PARAMETERS.
  textResource: Int -> representa el recurso String empleado
  modifier: Modifier -> representa el modifier empleado para el texto
  fontSize: Int -> representa el tamaño de la fuente del texto
@@ -216,9 +219,8 @@ fun GreetingText(
     )
 }
 
-/*
+/***
 FUNCIÓN PARA ESCRIBIR LOS COMPONENTES DE TIPO IMAGEN
-PARAMETERS.
  imageResource: Int -> representa el recurso Image empleado
  descriptionResource: Int -> representa el recurso String empleado para la descripción
  contentScale: ContentScale -> representa la escala empleada para la imagen
@@ -239,6 +241,9 @@ fun GreetingImage(
     )
 }
 
+/***
+ * FUNCIÓN PARA PREVISUALIZAR LA TARJETA DE PRESENTACIÓN
+ */
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
