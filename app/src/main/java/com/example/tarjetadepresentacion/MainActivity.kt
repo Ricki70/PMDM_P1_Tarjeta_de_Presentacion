@@ -168,17 +168,6 @@ fun TarjetaDePresentacion() {
                     modifier = Modifier.size(200.dp)
                 )
             }
-            Row (
-                modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ){
-                /*GreetingText(
-                    textResource = R.string.Web,
-                    fontSize = 20,
-                    colorStyle = colorResource(R.color.my_blue_dark)
-                )*/
-            }
         }
     }
 
@@ -189,7 +178,7 @@ FUNCIÓN PARA DIBUJAR UNA LINEA HORIZONTAL
 fun Line() {
     Box(
         modifier = Modifier
-            .fillMaxWidth()
+            .width(300.dp)
             .height(1.dp)
             .background(colorResource(R.color.my_blue_light))
     )
