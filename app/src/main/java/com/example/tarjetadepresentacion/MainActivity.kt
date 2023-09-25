@@ -199,9 +199,9 @@ fun Line() {
 FUNCIÓN PARA ESCRIBIR LOS COMPONENTES DE TIPO TEXTO
 PARAMETERS.
  textResource: Int -> representa el recurso String empleado
+ modifier: Modifier -> representa el modifier empleado para el texto
  fontSize: Int -> representa el tamaño de la fuente del texto
  colorStyle: Color -> representa el color de la fuente del texto
- modifier: Modifier -> representa el modifier empleado para el texto
  */
 @Composable
 fun GreetingText(
